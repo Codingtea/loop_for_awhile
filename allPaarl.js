@@ -18,7 +18,7 @@ var allPaarl = function(list) {
 
 var regNumberPaarl = allPaarl('CJ 765 ,CL 124, CY 567, CL 345, CJ 456, CL 341, CJ 234');
 
-;
+
 assert.deepEqual(regNumberPaarl, [ 'CJ 765',
   'CL 124',
   'CY 567',

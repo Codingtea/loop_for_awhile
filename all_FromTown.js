@@ -1,26 +1,27 @@
+
 const assert = require('assert');
-var allFromTown = function(list) {
+var arrayList = [];  //empty arrayList
 
+
+var allPaarl = function(list) {
   var stringSplit = list.split(',');
-  var arrayList = []; //empty arrayList
 
-  for (var i = 0; i < stringSplit.length; i++) {
-    var regno = stringSplit[i]
+  for (var i = 0; i < stringSplit.length; i++) { //loop
+    // console.log(stringSplit);
 
-    if (stringSplit[i].startsWith('CL'))
-    {
-      arrayList.push(stringSplit[i]); //pushing regno into arrayList
-    }
+    var regno = stringSplit[i].trim(); //the result of the loop regno
 
+    arrayList.push(regno);            //pushing regno into arrayList
   }
-return arrayList.length
+
+  return arrayList
 }
 
-var fromStellies = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341', 'CL');
+var fromStellies = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341','CL');
 
 //fromStellies should contains
-assert.deepEqual(fromStellies, [CL 124, CL 345, CL 341]);
+assert.deepEqual(fromStellies, [CL 124, CL 345, CL 341])
 
-// var fromKuilsriver = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341', 'CF');
-//
-// assert.deepEqual(fromKuilsriver, []);
+var fromKuilsriver = allFromTown('CL 124,CY 567,CL 345, CJ 456,CL 341','CF');
+
+assert.deepEqual(fromKuilsriver, []);
